@@ -19,7 +19,7 @@ const getProducts = async () => {
   const url = domain + '/api/items';
 
   const res = await fetch(url, {
-    next: { revalidate: 60 },
+    next: { revalidate: 3600 },
   });
 
   const json = await res.json();
