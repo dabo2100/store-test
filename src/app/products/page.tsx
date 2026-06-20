@@ -8,6 +8,12 @@ import ProductCard from '@/components/ProductCard';
 // development (local)
 // build
 
+// tsx
+// bundel (HTML - CSS - js) Build
+interface Product {
+  documentId: string;
+}
+
 const getProducts = async () => {
   const domain = 'https://pos.skyready.online';
   const url = domain + '/api/items';
@@ -21,7 +27,7 @@ const getProducts = async () => {
 };
 
 export default async function ProductsPage() {
-  const products = (await getProducts()) || [];
+  const products: Product[] = (await getProducts()) || [];
 
   return (
     <div className="w-full flex justify-center py-4">
@@ -33,3 +39,5 @@ export default async function ProductsPage() {
     </div>
   );
 }
+
+//myCode - gitHub - Server ( Vercel - VPS - Shared Hosting )
